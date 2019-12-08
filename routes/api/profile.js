@@ -226,7 +226,7 @@ router.put(
 // @access   Private
 router.delete("/experience/:exp_id", auth, async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.user.is });
+    const profile = await Profile.findOne({ user: req.user.id });
 
     // Get the remove index
     const removeIndex = profile.experience
@@ -311,7 +311,7 @@ router.put(
 // @access   Private
 router.delete("/education/:edu_id", auth, async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.user.is });
+    const profile = await Profile.findOne({ user: req.user.id });
 
     // Get the remove index
     const removeIndex = profile.education
